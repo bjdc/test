@@ -2,31 +2,39 @@
 <html>
 <head lang="en">
 <meta charset="gb2312">
-<title>jQuery鼠标点击弹出粒子效果动画 - A5源码</title>
+<title>哆啦A梦特效</title>
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
-
+<style>
+img{ border:none;}
+</style>
 <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script type="text/javascript" src="js/clickspark.min.js"></script>
 <script>
 $(document).ready(function () {
 
-	$('.button-1').clickSpark();
+	$('.button-1').clickSpark({
+		particleImagePath: 'particle-1.png',
+		particleCount: 200,
+		particleSpeed: 15,
+		particleSize: 12,
+		particleRotationSpeed: 5	
+	});
 
 	$('.button-2').clickSpark({
 		particleImagePath: 'particle-2.png',
-		particleCount: 35,
-		particleSpeed: 10,
+		particleCount: 300,
+		particleSpeed: 15,
 		particleSize: 15,
-		particleRotationSpeed: 20
+		particleRotationSpeed: 5
 	});
 
 	$(document).ready(function () {
 		$('.button-3').click(function () {
-			clickSpark.setParticleCount(50);
+			clickSpark.setParticleCount(350);
 			clickSpark.setParticleSize(12);
-			clickSpark.setParticleSpeed(12);
+			clickSpark.setParticleSpeed(20);
 			clickSpark.setParticleImagePath('particle-4.png');
 			clickSpark.fireParticles($('.sparklingDiv'));
 		});
@@ -40,42 +48,37 @@ $(document).ready(function () {
 }
 
 .sparklingDiv {
-	border: 1px solid grey;
-	height: 60px;
-	width: 100px;
+	border: none;
+	height: 10px;
+	width: 10px;
 }
 
 .sparklingDivContainer {
 	position: absolute;
-	top: 0px;
-	right: 30px;
+	top: 230px;
+	left: 680px;
 }
 </style>
 
 </head>
 <body background="img/bg.jpg">
-
 <div class="container">
-<br><br><br><br>
+<br><br><br><br><br><br><br><br>
     <div class="row">
-  
-		<img src="img/qin.png" class="btn btn-default button-1" />
-
-		<img src="img/hua.jpg" class="btn btn-default button-2" />
-
-		<img src="img/xin.jpg" class="btn btn-default button-3" />
 		<div class="sparklingDivContainer">
-			target div
-			<div class="sparklingDiv"></div>
-		</div>
+			<div class="sparklingDiv">
+			</div>
+		</div>			
+		<img src="img/qin.jpg" class="btn btn-default button-1" />
+		<img src="img/hua1.jpg" class="btn btn-default button-2" />
+		<img src="img/xin.jpg" class="btn btn-default button-3" />		
     </div>
-
 </div>
 </div>
-
+<br><br><br><br>
 <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
 <p>Powerd by <b>拔剑断愁</b></p> 
-<p>献给最爱的 <b>松风</b></p>
+<p>献给亲爱的 <b>松风</b></p>
 </div>
 </body>
 </html>
